@@ -25,7 +25,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ env.docker_repo }:${{ env.lmod }} --build-arg LMOD_VERSION=${{ env.lmod }} .
+        run: docker build -t ${{ env.docker_repo }}:${{ env.lmod }} --build-arg LMOD_VERSION=${{ env.lmod }} .
         working-directory: ./  
 
       - name: Push Docker image
